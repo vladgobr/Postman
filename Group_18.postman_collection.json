@@ -1,0 +1,3316 @@
+{
+	"info": {
+		"_postman_id": "93885e22-e42f-45f1-a675-179a2b222220",
+		"name": "Group_18",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "age_europe",
+			"item": [
+				{
+					"name": "Equivalence classes",
+					"item": [
+						{
+							"name": "0-17(9)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Age type is 'underage'\", () => {\r",
+											"  const responseJson = pm.response.json().age_type;\r",
+											"  pm.expect(responseJson).to.eql(\"underage\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "18-49(25)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Age type is 'adult'\", function(){\r",
+											"    const responseJson = pm.response.json().age_type;\r",
+											"    pm.expect(responseJson).to.eql(\"adult\")\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "25",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "50-100(75)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Age type is 'antiquity'\", function(){\r",
+											"    const responseJson = pm.response.json().age_type;\r",
+											"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "75",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "symbol 'v'",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "v",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "-",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "-7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "+",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "107",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_europe",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_europe"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Boundary Values",
+					"item": [
+						{
+							"name": "0-17",
+							"item": [
+								{
+									"name": "-1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "-1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "0",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\",function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test (\"'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "16",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test (\"Age type is'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "16",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "17",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test (\"Age type is'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "17",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "18",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test (\"Age type is'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "18",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "18-49",
+							"item": [
+								{
+									"name": "17",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test (\"Age type is'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "17",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "18",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "18",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "19",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "19",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "48",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "48",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "49",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "49",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "50",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "50",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "50-100",
+							"item": [
+								{
+									"name": "49",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "49",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "50",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "50",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "51",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "51",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "99",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "99",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "100",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\")\r",
+													"}\r",
+													")"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "100",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "101",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "101",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_europe",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_europe"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "age_usa",
+			"item": [
+				{
+					"name": "Equivalence classes",
+					"item": [
+						{
+							"name": "0-20(11)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Age type is 'underage'\", function(){\r",
+											"    const responseJson = pm.response.json().age_type;\r",
+											"    pm.expect(responseJson).to.eql(\"underage\")\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "11",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "21-50(34)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"\"adult\"\r",
+											"\r",
+											"pm.test(\"Age type is 'adult'\", function(){\r",
+											"    const responseJson = pm.response.json().age_type;\r",
+											"    pm.expect(responseJson).to.eql(\"adult\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "34",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "50-100(82)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Age type is 'antiquity'\", function(){\r",
+											"    const responseJson = pm.response.json().age_type;\r",
+											"    pm.expect(responseJson).to.eql(\"antiquity\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "82",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "symbol",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "v",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "-",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "-11",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "+",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "111",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "age",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/age_usa",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"age_usa"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Boundary Values",
+					"item": [
+						{
+							"name": "0-20",
+							"item": [
+								{
+									"name": "-1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "0",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\",function (){\r",
+													"    const responseJson  = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\")\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "1",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "19",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "19",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "20",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "20",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "21",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "21",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "21-49",
+							"item": [
+								{
+									"name": "20",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'underage'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"underage\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "20",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "21",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "21",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "22",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "22",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "48",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "48",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "49",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "49",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "50",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "50",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "50-100",
+							"item": [
+								{
+									"name": "49",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "49",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "50",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "50",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "51",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'adult'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"adult\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "51",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "99",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "99",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "100",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Age type is 'antiquity'\", function(){\r",
+													"    const responseJson = pm.response.json().age_type;\r",
+													"    pm.expect(responseJson).to.eql(\"antiquity\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "100",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "101",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "age",
+													"value": "101",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/age_usa",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"age_usa"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Task_1",
+			"item": [
+				{
+					"name": "endpoints 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_1?age=24&weight=75&name=vlad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_1"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "24"
+								},
+								{
+									"key": "weight",
+									"value": "75"
+								},
+								{
+									"key": "name",
+									"value": "vlad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endpoints 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_2?age=24&salary=1600&name=vlad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_2"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "24"
+								},
+								{
+									"key": "salary",
+									"value": "1600"
+								},
+								{
+									"key": "name",
+									"value": "vlad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endpoints 7",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "age",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "1600",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "vlad",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user_info_3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endpoints 8",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user_info_4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task_2",
+			"item": [
+				{
+					"name": "endpoints 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_3?age=24&salary=1600&name=vlad",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_3"
+							],
+							"query": [
+								{
+									"key": "age",
+									"value": "24"
+								},
+								{
+									"key": "salary",
+									"value": "1600"
+								},
+								{
+									"key": "name",
+									"value": "vlad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "endpoints 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "age",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "1600",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "vlad",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user_info_2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task_3",
+			"item": [
+				{
+					"name": "endpoints 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "endpoints 5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user_info_1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Charles",
+			"item": [
+				{
+					"name": "Charles_1(/get_method)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get_method?name=vlad&age=24",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get_method"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "vlad"
+								},
+								{
+									"key": "age",
+									"value": "24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charles_2(/user_info_3)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "vlad",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "24",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "1500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user_info_3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charles_3(/object_info_1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_1?name=vlad&age=24&weight=75",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_1"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "vlad"
+								},
+								{
+									"key": "age",
+									"value": "24"
+								},
+								{
+									"key": "weight",
+									"value": "75"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charles_4(/object_info_3)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_3?name=vlad&age=23&salary=1200",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_3"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "vlad"
+								},
+								{
+									"key": "age",
+									"value": "23"
+								},
+								{
+									"key": "salary",
+									"value": "1200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charles_5(/object_info_4)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/object_info_4?name=vlad&age=23&salary=1200",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"object_info_4"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "vlad"
+								},
+								{
+									"key": "age",
+									"value": "23"
+								},
+								{
+									"key": "salary",
+									"value": "1200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Charles_6(/user_info_2)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "vlad",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "29",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "3500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user_info_2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user_info_2"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "vlad",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "29",
+									"disabled": true
+								},
+								{
+									"key": "salary",
+									"value": "500",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "vlad",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "gobr",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"/*pm.test(\"sal\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.qa_salary_after_6_months).to.eql(responseJson.start_qa_salary*2);\r",
+							"});*/\r",
+							"//\r",
+							"pm.test(\"multiplication factor\", function () {\r",
+							"    var JsonData = pm.response.json();\r",
+							"    pm.expect(JsonData.qa_salary_after_6_months).to.eql(JsonData.start_qa_salary*2)\r",
+							"    pm.expect(JsonData.qa_salary_after_12_months).to.eql(JsonData.start_qa_salary*2.9)\r",
+							"    pm.expect(JsonData.person.u_salary_1_5_year).to.eql(JsonData.start_qa_salary*4)\r",
+							"    console.log(JsonData.person,JsonData);\r",
+							"});\r",
+							"//////////////////////\r",
+							"\r",
+							"let nameData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"name\",nameData.person.u_name);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 23,\r\n    \"salary\": 1600,\r\n    \"name\": \"vlad\",\r\n    \"auth_token\": \"{{token}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new_data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"/*\r",
+							"const schema = {\r",
+							"\t\"definitions\": {},\r",
+							"\t\"$schema\": \"http://json-schema.org/draft-07/schema#\", \r",
+							"\t\"$id\": \"https://example.com/object1620830259.json\", \r",
+							"\t\"title\": \"Root\", \r",
+							"\t\"type\": \"object\",\r",
+							"\t\"required\": [\r",
+							"\t\t\"age\",\r",
+							"\t\t\"name\",\r",
+							"\t\t\"salary\"\r",
+							"\t],\r",
+							"\t\"properties\": {\r",
+							"\t\t\"age\": {\r",
+							"\t\t\t\"$id\": \"#root/age\", \r",
+							"\t\t\t\"title\": \"Age\", \r",
+							"\t\t\t\"type\": \"integer\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t23\r",
+							"\t\t\t],\r",
+							"\t\t\t\"default\": 0\r",
+							"\t\t},\r",
+							"\t\t\"name\": {\r",
+							"\t\t\t\"$id\": \"#root/name\", \r",
+							"\t\t\t\"title\": \"Name\", \r",
+							"\t\t\t\"type\": \"string\",\r",
+							"\t\t\t\"default\": \"\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t\"vlad\"\r",
+							"\t\t\t],\r",
+							"\t\t\t\"pattern\": \"^.*$\"\r",
+							"\t\t},\r",
+							"\t\t\"salary\": {\r",
+							"\t\t\t\"$id\": \"#root/salary\", \r",
+							"\t\t\t\"title\": \"Salary\", \r",
+							"\t\t\t\"type\": \"array\",\r",
+							"\t\t\t\"default\": []\r",
+							"\t\t}\r",
+							"\t}\r",
+							"}\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validate schema\", () => {\r",
+							"    var JsonDate = pm.response.json();\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"multiplication factor\", function () {\r",
+							"    var JsonData = pm.response.json();\r",
+							"    pm.expect(JsonData.qa_salary_after_6_months).to.eql(JsonData.salary*1)\r",
+							"    pm.expect(JsonData.qa_salary_after_12_months).to.eql(JsonData.salary*2)\r",
+							"    pm.expect(JsonData.person.u_salary_1_5_year).to.eql(JsonData.salary*3)\r",
+							"    console.log(JsonData.person,JsonData);\r",
+							"});*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1600",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "vlad",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/new_data",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"new_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test_pet_info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"/////////////////////////////////////\r",
+							"\r",
+							"const schema = {\r",
+							"\t\"definitions\": {},\r",
+							"\t\"$schema\": \"http://json-schema.org/draft-07/schema#\", \r",
+							"\t\"$id\": \"https://example.com/object1621423594.json\", \r",
+							"\t\"title\": \"Root\", \r",
+							"\t\"type\": \"object\",\r",
+							"\t\"required\": [\r",
+							"\t\t\"age\",\r",
+							"\t\t\"daily_food\",\r",
+							"\t\t\"daily_sleep\",\r",
+							"\t\t\"name\"\r",
+							"\t],\r",
+							"\t\"properties\": {\r",
+							"\t\t\"age\": {\r",
+							"\t\t\t\"$id\": \"#root/age\", \r",
+							"\t\t\t\"title\": \"Age\", \r",
+							"\t\t\t\"type\": \"integer\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t23\r",
+							"\t\t\t],\r",
+							"\t\t\t\"default\": 0\r",
+							"\t\t},\r",
+							"\t\t\"daily_food\": {\r",
+							"\t\t\t\"$id\": \"#root/daily_food\", \r",
+							"\t\t\t\"title\": \"Daily_food\", \r",
+							"\t\t\t\"type\": \"number\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t0.9\r",
+							"\t\t\t],\r",
+							"\t\t\t\"default\": 0.0\r",
+							"\t\t},\r",
+							"\t\t\"daily_sleep\": {\r",
+							"\t\t\t\"$id\": \"#root/daily_sleep\", \r",
+							"\t\t\t\"title\": \"Daily_sleep\", \r",
+							"\t\t\t\"type\": \"number\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t187.5\r",
+							"\t\t\t],\r",
+							"\t\t\t\"default\": 0.0\r",
+							"\t\t},\r",
+							"\t\t\"name\": {\r",
+							"\t\t\t\"$id\": \"#root/name\", \r",
+							"\t\t\t\"title\": \"Name\", \r",
+							"\t\t\t\"type\": \"string\",\r",
+							"\t\t\t\"default\": \"\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t\"vlad\"\r",
+							"\t\t\t],\r",
+							"\t\t\t\"pattern\": \"^.*$\"\r",
+							"\t\t}\r",
+							"\t}\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Validate schema\",() => {\r",
+							"    var JsonData = pm.response.json();\r",
+							"    pm.response.to.have.jsonSchema(schema);  \r",
+							"});\r",
+							"\r",
+							"//////////////////////////////\r",
+							"\r",
+							"\r",
+							"pm.test(\"multiplication factor\",function() {\r",
+							"   let weight = pm.variables.get(\"weight\");\r",
+							"   var JsonData = pm.response.json();\r",
+							"   pm.expect(JsonData.daily_food).to.eq(weight*0.012);\r",
+							"   pm.expect(JsonData.daily_sleep).to.eq(weight*2.5);\r",
+							"   console.log(JsonData);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "weight",
+							"value": "75",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "vlad",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/test_pet_info",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"test_pet_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_test_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"///////////////////////////////\r",
+							"\r",
+							"const shema = {\r",
+							"\t\"definitions\": {},\r",
+							"\t\"$schema\": \"http://json-schema.org/draft-07/schema#\", \r",
+							"\t\"$id\": \"https://example.com/object1621430338.json\", \r",
+							"\t\"title\": \"Root\", \r",
+							"\t\"type\": \"object\",\r",
+							"\t\"required\": [\r",
+							"\t\t\"age\",\r",
+							"\t\t\"family\",\r",
+							"\t\t\"name\",\r",
+							"\t\t\"salary\"\r",
+							"\t],\r",
+							"\t\"properties\": {\r",
+							"\t\t\"age\": {\r",
+							"\t\t\t\"$id\": \"#root/age\", \r",
+							"\t\t\t\"title\": \"Age\", \r",
+							"\t\t\t\"type\": \"string\",\r",
+							"\t\t\t\"default\": \"\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t\"23\"\r",
+							"\t\t\t],\r",
+							"\t\t\t\"pattern\": \"^.*$\"\r",
+							"\t\t},\r",
+							"\t\t\"family\": {\r",
+							"\t\t\t\"$id\": \"#root/family\", \r",
+							"\t\t\t\"title\": \"Family\", \r",
+							"\t\t\t\"type\": \"object\",\r",
+							"\t\t\t\"required\": [\r",
+							"\t\t\t\t\"children\",\r",
+							"\t\t\t\t\"u_salary_1_5_year\"\r",
+							"\t\t\t],\r",
+							"\t\t\t\"properties\": {\r",
+							"\t\t\t\t\"children\": {\r",
+							"\t\t\t\t\t\"$id\": \"#root/family/children\", \r",
+							"\t\t\t\t\t\"title\": \"Children\", \r",
+							"\t\t\t\t\t\"type\": \"array\",\r",
+							"\t\t\t\t\t\"default\": [],\r",
+							"\t\t\t\t\t\"items\":{\r",
+							"\t\t\t\t\t\t\"$id\": \"#root/family/children/items\", \r",
+							"\t\t\t\t\t\t\"title\": \"Items\", \r",
+							"\t\t\t\t\t\t\"type\": \"array\",\r",
+							"\t\t\t\t\t\t\"default\": []\r",
+							"\t\t\t\t\t}\r",
+							"\t\t\t\t},\r",
+							"\t\t\t\t\"u_salary_1_5_year\": {\r",
+							"\t\t\t\t\t\"$id\": \"#root/family/u_salary_1_5_year\", \r",
+							"\t\t\t\t\t\"title\": \"U_salary_1_5_year\", \r",
+							"\t\t\t\t\t\"type\": \"integer\",\r",
+							"\t\t\t\t\t\"examples\": [\r",
+							"\t\t\t\t\t\t6400\r",
+							"\t\t\t\t\t],\r",
+							"\t\t\t\t\t\"default\": 0\r",
+							"\t\t\t\t}\r",
+							"\t\t\t}\r",
+							"\t\t}\r",
+							",\r",
+							"\t\t\"name\": {\r",
+							"\t\t\t\"$id\": \"#root/name\", \r",
+							"\t\t\t\"title\": \"Name\", \r",
+							"\t\t\t\"type\": \"string\",\r",
+							"\t\t\t\"default\": \"\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t\"vlad\"\r",
+							"\t\t\t],\r",
+							"\t\t\t\"pattern\": \"^.*$\"\r",
+							"\t\t},\r",
+							"\t\t\"salary\": {\r",
+							"\t\t\t\"$id\": \"#root/salary\", \r",
+							"\t\t\t\"title\": \"Salary\", \r",
+							"\t\t\t\"type\": \"integer\",\r",
+							"\t\t\t\"examples\": [\r",
+							"\t\t\t\t1600\r",
+							"\t\t\t],\r",
+							"\t\t\t\"default\": 0\r",
+							"\t\t}\r",
+							"\t}\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Validate schema\",() =>{\r",
+							"    var JsonData = pm.response.json();\r",
+							"    pm.response.to.have.jsonSchema(shema);\r",
+							"});\r",
+							"\r",
+							"/////////////////////\r",
+							"\r",
+							"let nameData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"name\",nameData.name);\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validate name\",function (){\r",
+							"    pm.expect(pm.environment.get(\"name\")).to.eql(\"vlad\");\r",
+							"});\r",
+							"\r",
+							"let ageData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"age\",ageData.age);\r",
+							"\r",
+							"var request_data = request.data;\r",
+							"console.log(request_data.age);\r",
+							"\r",
+							"/*pm.test(\"Person is Jane\", () => {\r",
+							"  const JsonData = pm.response.json();\r",
+							"  pm.expect(JsonData.age).to.eql(23);\r",
+							"});*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1600",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "vlad",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/get_test_user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"get_test_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const numData = pm.response.json();\r",
+							"let object = numData[Math.floor(Math.random()*numData.length)];\r",
+							"\r",
+							"pm.environment.set('RandCur_ID',object.Cur_ID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/currency",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "curr_byn",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const shema = \r",
+							"\r",
+							"pm.test(\"Shema valid\", function(){\r",
+							"    var JsonData = pm.response.json();\r",
+							"    pm.expect.to.have.jsonSchema(shema);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						},
+						{
+							"key": "curr_code",
+							"value": "{{RandCur_ID}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/curr_byn",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"curr_byn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
